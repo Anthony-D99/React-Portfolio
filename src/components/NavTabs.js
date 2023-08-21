@@ -1,9 +1,22 @@
 import React from 'react';
 
 
+
 function NavTabs({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-tabs">
+    
+    <ul className="nav nav-tabs " >
+      <h3>Dev Name</h3>
+      <li className="nav-item offset-8" >
+        <a
+          href="#about"
+          onClick={() => handlePageChange('About')}
+
+          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
+        >
+          About Me
+        </a>
+      </li>
       <li className="nav-item">
         <a
           href="#resume"
@@ -12,16 +25,6 @@ function NavTabs({ currentPage, handlePageChange }) {
           className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
         >
           Resume
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#about"
-          onClick={() => handlePageChange('About')}
-
-          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
-        >
-          About
         </a>
       </li>
       <li className="nav-item">

@@ -1,22 +1,42 @@
 import React from 'react';
 
+
+ 
+
+
+
+
 export default function Contact() {
+  const submitEmail = ()=>{
+    const emailHelp = document.getElementById('emailHelp')
+    const userEmail = document.getElementById('exampleInputEmail1');
+    let regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+    if(userEmail === regex.test(userEmail)){
+      emailHelp.innerHTML = "The Email is valid"
+    }else{
+      emailHelp.innerHTML = "The Email is not a valid email address"
+    }
+  
+  }
   return (
     <div>
-      <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
+      <h1 className='offset-5'>Contact Page</h1>
+      <form className='col-6 offset-3'>
+      <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <div id="emailHelp" class="form-text">Please enter a valid Email address</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputName1" class="form-label">name</label>
+    <input type="name" class="form-control" id="exampleInputName1"/>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputMessage1" class="form-label">message</label>
+    <input type="message" class="form-control" id="exampleInputMessage1"/>
+  </div>
+  <button onClick={submitEmail()}>Submit</button>
+      </form>
     </div>
   );
 }

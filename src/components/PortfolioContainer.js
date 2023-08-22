@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavTabs from './NavTabs';
+import Footer from './Footer'
 import Resume from './pages/Resume';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -27,6 +28,8 @@ export default function PortfolioContainer() {
     <div>
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
+      <Footer/>
     </div>
+    
   );
 }
